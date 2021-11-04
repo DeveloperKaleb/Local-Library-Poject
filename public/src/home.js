@@ -21,7 +21,6 @@ function getBorrowedBooks(books) {
 
 function getBooksBorrowedCount(books) {
   const borrowedBooks = getBorrowedBooks(books)
-  console.log(borrowedBooks)
   return borrowedBooks.length
 }
 
@@ -91,8 +90,8 @@ function getMostPopularAuthors(books, authors) {
     return authorOb
   })
   popularAuthors.sort((authorA, authorB) => authorB.count - authorA.count)
-  popularAuthors.slice(0, 10)
-  return popularAuthors
+  const slicedAuthors = popularAuthors.slice(0, 5)
+  return slicedAuthors
   //I will use .map() on the ARRAY authors to return an array of OBJECTS each with TWO KEYS: name (of the author) and count (number of times the authors books have been borrowed)
 }
 
