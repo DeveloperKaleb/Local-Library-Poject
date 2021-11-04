@@ -91,9 +91,7 @@ function getMostPopularAuthors(books, authors) {
     return authorOb
   })
   popularAuthors.sort((authorA, authorB) => authorB.count - authorA.count)
-  for (let i = popularAuthors.length - 1; i > 4; i--) {
-    popularAuthors.pop()
-  }
+  popularAuthors.slice(0, 10)
   return popularAuthors
   //I will use .map() on the ARRAY authors to return an array of OBJECTS each with TWO KEYS: name (of the author) and count (number of times the authors books have been borrowed)
 }
